@@ -6,6 +6,7 @@
 
 #include "GAME_PAGE.h"
 #include "HorseSelectDlg.h"
+#include "ReadyDlg.h"
 #include "PlayerUser.h"
 
 // CHorseRacingDlg 대화 상자
@@ -41,6 +42,7 @@ public:
 private:
 	CGAME_PAGE GamePage_Obj;
 	CHorseSelectDlg HorseSelect_Obj;
+	CReadyDlg ReadyDlg_Obj;
 	PlayerUser UserObj;
 
 	void CreateChildPage();
@@ -53,4 +55,6 @@ public:
 	void ShowMainControls(bool bshow);
 
 	void ShowHorseSelectPage();
+
+	void ShowReadyPage();
 };

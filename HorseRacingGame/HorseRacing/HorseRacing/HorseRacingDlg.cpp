@@ -175,6 +175,7 @@ void CHorseRacingDlg::CreateChildPage()
 	// 자식 페이지 생성
 	GamePage_Obj.Create(IDD_GAMEPAGE, this);
 	HorseSelect_Obj.Create(IDD_HORSE_SELECT_DIALOG, this);
+	ReadyDlg_Obj.Create(IDD_READY_DIALOG, this);
 
 	// 페이지 위치 지정
 	CRect rc;
@@ -185,6 +186,7 @@ void CHorseRacingDlg::CreateChildPage()
 	// 부모 다이얼로그 내부 전체를 페이지 영역으로 사용
 	GamePage_Obj.MoveWindow(&rc);
 	HorseSelect_Obj.MoveWindow(&rc);
+	ReadyDlg_Obj.MoveWindow(&rc);
 
 	// 위의 코드와 동일하게 부모 다이얼로그 내부 전체를 페이지 영역으로 사용한다.
 	//GamePage_Obj.SetWindowPos(
@@ -212,12 +214,19 @@ void CHorseRacingDlg::ShowGamePage()
 
 void CHorseRacingDlg::ShowHorseSelectPage()
 {
+	HorseSelect_Obj.HideSelectButton();
 	HorseSelect_Obj.ShowWindow(SW_SHOW);
+}
+
+void CHorseRacingDlg::ShowReadyPage()
+{
+	ReadyDlg_Obj.ShowWindow(SW_SHOW);
 }
 
 void CHorseRacingDlg::ShareUser()
 {
 	GamePage_Obj.SetPlayer(&UserObj);
+	HorseSelect_Obj.SetPlayer(&UserObj);
 }
 
 void CHorseRacingDlg::ShowMainControls(bool bshow)

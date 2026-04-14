@@ -59,8 +59,8 @@ void CGAME_PAGE::OnBnClickedButton1()
 
 	if (pMain)	// 부모의 주소창이 제대로 있으면 실행
 	{
-		this->ShowWindow(SW_HIDE);
 		pMain->ShowMainControls(true);
+		this->ShowWindow(SW_HIDE);
 	}
 }
 
